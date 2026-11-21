@@ -1,0 +1,16 @@
+$ sha256sum /tmp/srv_emr_01_source.raw   # source hash BEFORE imaging
+23b3d7c5f5aa46305549bb19c0a3f79d4b58eb1d9981f76ef9e16ee6729b341e  /tmp/srv_emr_01_source.raw
+
+$ dd if=/tmp/srv_emr_01_source.raw of=srv_emr_01.dd bs=4M conv=noerror,sync status=progress
+4+0 records in
+4+0 records out
+16777216 bytes (17 MB, 16 MiB) copied, 0.0118045 s, 1.4 GB/s
+
+$ sha256sum srv_emr_01.dd   # image hash AFTER imaging
+23b3d7c5f5aa46305549bb19c0a3f79d4b58eb1d9981f76ef9e16ee6729b341e  srv_emr_01.dd
+
+$ sha256sum -c   # verification
+HASH MATCH: source == image  -> image is a bit-for-bit copy
+
+$ chmod 444 srv_emr_01.dd && ls -l srv_emr_01.dd   # read-only working copy
+-r--r--r-- 1 root root 16777216 Nov 18 04:07 srv_emr_01.dd

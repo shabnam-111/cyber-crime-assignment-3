@@ -1,0 +1,23 @@
+timestamp_ist,source,category,event
+2026-09-13T16:05:10+05:30,browser_history.csv,Other,WS-ADM-07 billing https://mail.omega-hospital.example/inbox
+2026-09-13T16:09:42+05:30,browser_history.csv,Phishing,WS-ADM-07 billing http://invoice-update.example.net/q3 (phishing landing page)
+2026-09-13T16:20:05+05:30,usb.log,USB insertion,WS-ADM-07 kernel: usb 1-2: new high-speed USB device number 7 using xhci_hcd
+2026-09-13T16:20:06+05:30,usb.log,USB insertion,WS-ADM-07 kernel: usb 1-2: Product: Flash Disk  Manufacturer: Generic  SerialNumber: 0710A4F3
+2026-09-13T16:21:30+05:30,usb.log,USB insertion,WS-ADM-07 udisksd: Mounted /dev/sdb1 at /media/billing/UNTITLED
+2026-09-13T16:22:14+05:30,usb.log,USB insertion,WS-ADM-07 gnome-shell: Launched invoice_Q3_update.pdf.scr from /media/billing/UNTITLED
+2026-09-13T16:22:40+05:30,proxy.log,Network,10.10.20.31 CONNECT 198.51.100.23:443 200 TLS beacon-like interval=60s
+2026-09-13T22:10:02+05:30,proxy.log,Network,10.10.20.31 GET http://198.51.100.23/tools/scan.bin 200 48210
+2026-09-14T01:40:55+05:30,proxy.log,Network,10.10.20.31 POST https://198.51.100.23/api/creds 200 912
+2026-09-14T01:42:11+05:30,auth.log,Lateral movement,WS-ADM-07 sshd[2210]: Failed password for svc_backup from 10.10.20.31 port 50122 ssh2
+2026-09-14T01:42:19+05:30,auth.log,Lateral movement,WS-ADM-07 sshd[2210]: Failed password for svc_backup from 10.10.20.31 port 50124 ssh2
+2026-09-14T01:42:27+05:30,auth.log,Lateral movement,SRV-EMR-01 sshd[3811]: Accepted password for svc_backup from 10.10.20.31 port 50131 ssh2
+2026-09-14T01:44:03+05:30,auth.log,Privilege escalation,SRV-EMR-01 sudo: svc_backup : TTY=pts/0 ; USER=root ; COMMAND=/bin/bash
+2026-09-14T02:05:40+05:30,auth.log,Persistence,SRV-EMR-01 crontab[3902]: (svc_backup) REPLACE (svc_backup)
+2026-09-14T02:06:00+05:30,fs_events.log,Other,SRV-EMR-01 auditd: CREATE /var/tmp/.omega_loader (mode 0755) uid=svc_backup
+2026-09-14T02:31:12+05:30,proxy.log,Exfiltration,10.10.20.15 CONNECT 198.51.100.23:443 200 EXFIL out=3.8GB
+2026-09-14T02:58:30+05:30,proxy.log,Key retrieval,10.10.20.15 GET http://198.51.100.23/k/omega.key 200 64
+2026-09-14T02:59:10+05:30,fs_events.log,Encryption,SRV-EMR-01 auditd: RENAME /emr/patients/record_0001.db -> record_0001.db.omega (batch start)
+2026-09-14T03:12:44+05:30,fs_events.log,Encryption,"SRV-EMR-01 auditd: RENAME /emr/patients/record_9120.db -> record_9120.db.omega (batch end, 9120 files)"
+2026-09-14T03:13:02+05:30,fs_events.log,Ransom note,SRV-EMR-01 auditd: CREATE /emr/HOW_TO_RECOVER.txt
+2026-09-14T03:14:30+05:30,fs_events.log,Backup destruction,SRV-EMR-01 auditd: DELETE vss/backup snapshots (3 removed)
+2026-09-14T03:20:00+05:30,fs_events.log,Other,SRV-EMR-01 app: EMR service unreachable - staff reports

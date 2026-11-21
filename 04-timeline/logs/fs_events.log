@@ -1,0 +1,6 @@
+2026-09-14T02:06:00+05:30 SRV-EMR-01 auditd: CREATE /var/tmp/.omega_loader (mode 0755) uid=svc_backup
+2026-09-14T02:59:10+05:30 SRV-EMR-01 auditd: RENAME /emr/patients/record_0001.db -> record_0001.db.omega (batch start)
+2026-09-14T03:12:44+05:30 SRV-EMR-01 auditd: RENAME /emr/patients/record_9120.db -> record_9120.db.omega (batch end, 9120 files)
+2026-09-14T03:13:02+05:30 SRV-EMR-01 auditd: CREATE /emr/HOW_TO_RECOVER.txt
+2026-09-14T03:14:30+05:30 SRV-EMR-01 auditd: DELETE vss/backup snapshots (3 removed)
+2026-09-14T03:20:00+05:30 SRV-EMR-01 app: EMR service unreachable - staff reports

@@ -1,0 +1,5 @@
+2026-09-14T01:42:11+05:30 WS-ADM-07 sshd[2210]: Failed password for svc_backup from 10.10.20.31 port 50122 ssh2
+2026-09-14T01:42:19+05:30 WS-ADM-07 sshd[2210]: Failed password for svc_backup from 10.10.20.31 port 50124 ssh2
+2026-09-14T01:42:27+05:30 SRV-EMR-01 sshd[3811]: Accepted password for svc_backup from 10.10.20.31 port 50131 ssh2
+2026-09-14T01:44:03+05:30 SRV-EMR-01 sudo: svc_backup : TTY=pts/0 ; USER=root ; COMMAND=/bin/bash
+2026-09-14T02:05:40+05:30 SRV-EMR-01 crontab[3902]: (svc_backup) REPLACE (svc_backup)

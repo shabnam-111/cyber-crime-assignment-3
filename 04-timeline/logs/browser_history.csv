@@ -1,0 +1,3 @@
+time,host,user,url
+2026-09-13T16:05:10+05:30,WS-ADM-07,billing,https://mail.omega-hospital.example/inbox
+2026-09-13T16:09:42+05:30,WS-ADM-07,billing,http://invoice-update.example.net/q3 (phishing landing page)
