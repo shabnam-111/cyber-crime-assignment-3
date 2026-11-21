@@ -1,0 +1,19 @@
+name: Repo structure and Markdown check
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required structure
+        run: |
+          for p in README.md 01-first-responder/SOP.md 02-evidence/chain_of_custody.md \
+                   03-malware-analysis/malware_analysis.md 04-timeline/build_timeline.py \
+                   05-report docs/tool_summary_workflow_authorship.md screenshots; do
+            test -e "$p" || { echo "Missing: $p"; exit 1; }
+          done
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: "**/*.md"
+          config: ".markdownlint.json"
